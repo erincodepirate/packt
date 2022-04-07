@@ -1,0 +1,15 @@
+<google-map height="100%" width="auto" *ngIf="poi$ | 
+  async as poi" [center]="poi">
+  <map-marker #marker="mapMarker" [position]="poi" (mapClick)="showInfo(marker)"></map-marker> 
+    <map-info-window>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{poi.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="poi.imgUrl">
+      <mat-card-content>
+        <p>{{poi.description}}</p>
+      </mat-card-content>
+    </mat-card>
+  </map-info-window>
+</google-map>
