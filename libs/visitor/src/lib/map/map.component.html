@@ -1,6 +1,6 @@
 <google-map height="100%" width="auto" *ngIf="poi$ | 
   async as poi" [center]="poi">
-  <map-marker #marker="mapMarker" [position]="poi" (mapClick)="showInfo(marker)"></map-marker> 
+  <map-marker #marker="mapMarker" [position]="poi" (mapClick)="showInfo(marker, poi.id)"></map-marker> 
     <map-info-window>
     <mat-card>
       <mat-card-header>
